@@ -16,7 +16,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    // ...
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "NexTalk API",
+        Version = "v1",
+        Description = "Real-time chat API built with ASP.NET Core & SignalR"
+    });
+
 
     options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
     {

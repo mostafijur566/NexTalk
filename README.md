@@ -2,6 +2,14 @@
 
 A real-time chat backend built with **ASP.NET Core**, **SignalR**, and **Entity Framework Core**. Supports direct messaging, group chats, JWT authentication, and live presence tracking.
 
+## Preview
+
+![Chat Demo](chat_example.gif)
+
+## Entity Relationship Diagram
+
+![ERD](NexTalk.png)
+
 ---
 
 ## Tech Stack

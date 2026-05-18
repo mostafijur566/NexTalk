@@ -32,7 +32,7 @@ A real-time chat backend built with **ASP.NET Core**, **SignalR**, and **Entity 
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/mostafijur566/NexTalk.git
    cd NexTalk
    ```
 

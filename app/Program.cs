@@ -1,5 +1,6 @@
 using System.Text;
 using app.Data;
+using app.Hubs;
 using app.Interface;
 using app.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -59,6 +60,8 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IChatRepository, ChatRepository>();
 
+builder.Services.AddSignalR(); 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -74,6 +77,6 @@ app.UseAuthentication();
 app.UseAuthorization(); 
 
 app.MapControllers();
-
+app.MapHub<ChatHub>("/hubs/chat");
 app.Run();
 

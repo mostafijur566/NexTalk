@@ -38,7 +38,7 @@ namespace app.Controllers
             }
             catch (UnauthorizedAccessException ex)
             {
-                return Unauthorized(new { message = ex.Message });  // 👈 401
+                return Unauthorized(new { message = ex.Message }); 
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace app.Controllers
             }
             catch (UnauthorizedAccessException ex)
             {
-                return Unauthorized(new { message = ex.Message });  // 👈 401
+                return Unauthorized(new { message = ex.Message });  
             }
             catch (Exception ex)
             {

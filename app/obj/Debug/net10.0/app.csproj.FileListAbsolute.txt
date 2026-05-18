@@ -54,7 +54,9 @@ D:\ASP\NexTalk\app\bin\Debug\net10.0\app.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\app.pdb
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Azure.Core.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Azure.Identity.dll
+D:\ASP\NexTalk\app\bin\Debug\net10.0\BCrypt-Net-Next.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Humanizer.dll
+D:\ASP\NexTalk\app\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\ASP\NexTalk\app\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -215,5 +217,3 @@ D:\ASP\NexTalk\app\obj\Debug\net10.0\refint\app.dll
 D:\ASP\NexTalk\app\obj\Debug\net10.0\app.pdb
 D:\ASP\NexTalk\app\obj\Debug\net10.0\app.genruntimeconfig.cache
 D:\ASP\NexTalk\app\obj\Debug\net10.0\ref\app.dll
-D:\ASP\NexTalk\app\bin\Debug\net10.0\BCrypt-Net-Next.dll
-D:\ASP\NexTalk\app\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -62,6 +62,17 @@ builder.Services.AddScoped<IChatRepository, ChatRepository>();
 
 builder.Services.AddSignalR(); 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:5500")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,7 +82,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors("DevPolicy");
+
+// app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization(); 

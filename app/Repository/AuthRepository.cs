@@ -26,7 +26,7 @@ namespace app.Repository
             _config = config;
         }
 
-         public async Task<bool> UserExistsAsync(string email)
+        public async Task<bool> UserExistsAsync(string email)
         {
             return await _context.Users.AnyAsync(u => u.Email == email.ToLower());
         }
@@ -35,6 +35,12 @@ namespace app.Repository
         {
             if (await UserExistsAsync(dto.Email))
                 throw new Exception("Email already exists.");
+
+            if (await _context.Users.AnyAsync(u => u.Username == dto.Username))
+                throw new Exception("Username is already taken.");
+
+            if (await _context.Users.AnyAsync(u => u.Email == dto.Email))
+                throw new Exception("Email is already registered.");
 
             var user = new User
             {

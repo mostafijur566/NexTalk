@@ -20,16 +20,25 @@ namespace app.Controllers
             _groupRepo = groupRepo;
         }
 
-        private Guid GetCurrentUserId() =>
-            Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        private Guid GetCurrentUserId()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null)
+                throw new UnauthorizedAccessException("User is not authenticated.");
+            return Guid.Parse(userId);
+        }
 
-            [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> CreateGroup(CreateGroupDto dto)
         {
             try
             {
                 var result = await _groupRepo.CreateGroupAsync(dto, GetCurrentUserId());
                 return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { message = ex.Message });  // 👈 401
             }
             catch (Exception ex)
             {
@@ -45,6 +54,10 @@ namespace app.Controllers
                 var result = await _groupRepo.GetMyGroupsAsync(GetCurrentUserId());
                 return Ok(result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { message = ex.Message });  // 👈 401
+            }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message });
@@ -58,6 +71,10 @@ namespace app.Controllers
             {
                 var result = await _groupRepo.GetGroupMembersAsync(id);
                 return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -73,6 +90,10 @@ namespace app.Controllers
                 await _groupRepo.AddMemberAsync(id, dto, GetCurrentUserId());
                 return Ok(new { message = "Member added successfully." });
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { message = ex.Message });
+            }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message });
@@ -86,6 +107,10 @@ namespace app.Controllers
             {
                 await _groupRepo.RemoveMemberAsync(id, userId, GetCurrentUserId());
                 return Ok(new { message = "Member removed successfully." });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { message = ex.Message });
             }
             catch (Exception ex)
             {

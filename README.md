@@ -25,14 +25,14 @@ A real-time chat backend built with **ASP.NET Core**, **SignalR**, and **Entity 
 
 ### Prerequisites
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
 - SQL Server (local or remote)
 
 ### Setup
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/mostafijur566/NexTalk.git
    cd NexTalk
    ```
 

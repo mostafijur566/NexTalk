@@ -12,7 +12,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.8",
           "Microsoft.AspNetCore.OpenApi": "10.0.8",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.2",
           "Swashbuckle.AspNetCore": "10.1.7"
         },
         "runtime": {
@@ -392,22 +392,22 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/10.0.0": {
+      "Microsoft.EntityFrameworkCore/10.0.4": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.0"
+          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.4"
         },
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "10.0.426.12010"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/10.0.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/10.0.4": {
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "10.0.426.12010"
           }
         }
       },
@@ -420,7 +420,7 @@
           "Microsoft.CodeAnalysis.CSharp": "4.14.0",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.14.0",
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "4.14.0",
-          "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.4",
           "Microsoft.Extensions.DependencyModel": "10.0.0",
           "Mono.TextTemplating": "3.0.0",
           "Newtonsoft.Json": "13.0.3"
@@ -432,14 +432,14 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/10.0.0": {
+      "Microsoft.EntityFrameworkCore.Relational/10.0.4": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "10.0.0"
+          "Microsoft.EntityFrameworkCore": "10.0.4"
         },
         "runtime": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "10.0.426.12010"
           }
         }
       },
@@ -542,14 +542,6 @@
           }
         }
       },
-      "MySqlConnector/2.4.0": {
-        "runtime": {
-          "lib/net9.0/MySqlConnector.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.4.0.0"
-          }
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -558,15 +550,24 @@
           }
         }
       },
-      "Pomelo.EntityFrameworkCore.MySql/9.0.0": {
+      "Npgsql/10.0.3": {
+        "runtime": {
+          "lib/net10.0/Npgsql.dll": {
+            "assemblyVersion": "10.0.3.0",
+            "fileVersion": "10.0.3.0"
+          }
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/10.0.2": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
-          "MySqlConnector": "2.4.0"
+          "Microsoft.EntityFrameworkCore": "10.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.4",
+          "Npgsql": "10.0.3"
         },
         "runtime": {
-          "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.0.0"
+          "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "assemblyVersion": "10.0.2.0",
+            "fileVersion": "10.0.2.0"
           }
         }
       },
@@ -859,19 +860,19 @@
       "path": "microsoft.codeanalysis.workspaces.msbuild/4.14.0",
       "hashPath": "microsoft.codeanalysis.workspaces.msbuild.4.14.0.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/10.0.0": {
+    "Microsoft.EntityFrameworkCore/10.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hHa2amRjMyBLUH/KTML6FgIAhZ0VFYkhCKwWEax0rO6iNeM1P5MflyeQLE5dniSIOZHc3Oqyv5UIyTFO4e1Auw==",
-      "path": "microsoft.entityframeworkcore/10.0.0",
-      "hashPath": "microsoft.entityframeworkcore.10.0.0.nupkg.sha512"
+      "sha512": "sha512-kzTsfFK2GCytp6DDTfQOmxPU4gbGdrIlP7PxrxF3ESNLtfXrC8BoUVZENBN2WORlZPAD7CVX6AYIglgkpXQooA==",
+      "path": "microsoft.entityframeworkcore/10.0.4",
+      "hashPath": "microsoft.entityframeworkcore.10.0.4.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/10.0.0": {
+    "Microsoft.EntityFrameworkCore.Abstractions/10.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-C+TT9k7f1GQ8agOfV512K9iwrzi76RXVSDiLx+iWC9pz3QhEpSF1Dyk+FpVvd8ULQ+rqymfM8KQ7g48ttQVyMg==",
-      "path": "microsoft.entityframeworkcore.abstractions/10.0.0",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.10.0.0.nupkg.sha512"
+      "sha512": "sha512-qDcJqCfN1XYyX0ID/Hd9/kQTRvlia8S+Yuwyl9uFhBIKnOCbl9WMdGQCzbZUKbkpkfvf3P9CDdXsnxHyE3O0Aw==",
+      "path": "microsoft.entityframeworkcore.abstractions/10.0.4",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Design/10.0.0": {
       "type": "package",
@@ -880,12 +881,12 @@
       "path": "microsoft.entityframeworkcore.design/10.0.0",
       "hashPath": "microsoft.entityframeworkcore.design.10.0.0.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/10.0.0": {
+    "Microsoft.EntityFrameworkCore.Relational/10.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A3MX1ee7RDxWCUdx/KqP+74fbksz0UIhkVZh56YHvbPkEKsffCXgHU3LGkRDwqR/MrBNWLCWC/IVX79tzM30ZA==",
-      "path": "microsoft.entityframeworkcore.relational/10.0.0",
-      "hashPath": "microsoft.entityframeworkcore.relational.10.0.0.nupkg.sha512"
+      "sha512": "sha512-DOTjTHy93W3TwpMLM4SCm0n57Sc0Jj3+m2S6LSTstKyBB34eT1UouaMS19mpWwvtj42+sRiEjA3+rOTNoNzXFQ==",
+      "path": "microsoft.entityframeworkcore.relational/10.0.4",
+      "hashPath": "microsoft.entityframeworkcore.relational.10.0.4.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/10.0.0": {
       "type": "package",
@@ -957,13 +958,6 @@
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
     },
-    "MySqlConnector/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-78M+gVOjbdZEDIyXQqcA7EYlCGS3tpbUELHvn6638A2w0pkPI625ixnzsa5staAd3N9/xFmPJtkKDYwsXpFi/w==",
-      "path": "mysqlconnector/2.4.0",
-      "hashPath": "mysqlconnector.2.4.0.nupkg.sha512"
-    },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
       "serviceable": true,
@@ -971,12 +965,19 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
-    "Pomelo.EntityFrameworkCore.MySql/9.0.0": {
+    "Npgsql/10.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cl7S4s6CbJno0LjNxrBHNc2xxmCliR5i40ATPZk/eTywVaAbHCbdc9vbGc3QThvwGjHqrDHT8vY9m1VF/47o0g==",
-      "path": "pomelo.entityframeworkcore.mysql/9.0.0",
-      "hashPath": "pomelo.entityframeworkcore.mysql.9.0.0.nupkg.sha512"
+      "sha512": "sha512-7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
+      "path": "npgsql/10.0.3",
+      "hashPath": "npgsql.10.0.3.nupkg.sha512"
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/10.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PsNYgPOSW41Xx19gin7y4EdZAPteWr9Cb01XkdObxOsPzi+mgBupBEN7J7+erXFsROPOILM7MlIoO9QzL8+LGQ==",
+      "path": "npgsql.entityframeworkcore.postgresql/10.0.2",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.2.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/10.1.7": {
       "type": "package",

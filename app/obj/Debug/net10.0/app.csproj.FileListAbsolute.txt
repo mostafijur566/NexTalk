@@ -188,5 +188,5 @@ D:\ASP\NexTalk\app\obj\Debug\net10.0\refint\app.dll
 D:\ASP\NexTalk\app\obj\Debug\net10.0\app.pdb
 D:\ASP\NexTalk\app\obj\Debug\net10.0\app.genruntimeconfig.cache
 D:\ASP\NexTalk\app\obj\Debug\net10.0\ref\app.dll
-D:\ASP\NexTalk\app\bin\Debug\net10.0\MySqlConnector.dll
-D:\ASP\NexTalk\app\bin\Debug\net10.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\ASP\NexTalk\app\bin\Debug\net10.0\Npgsql.dll
+D:\ASP\NexTalk\app\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

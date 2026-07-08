@@ -53,6 +53,7 @@ namespace app.Hubs
         }
 
         // ── Send Direct Message ───────────────────────────────────
+        // ── Send Direct Message ───────────────────────────────────
         public async Task SendDirectMessage(SendDirectMessageDto dto)
         {
             var senderIdString = GetCurrentUserId();
@@ -60,8 +61,10 @@ namespace app.Hubs
 
             var message = await _chatRepo.SendDirectMessageAsync(dto, senderId);
 
-            var recipientId = dto.RecipientId.ToString();
-            if (_onlineUsers.TryGetValue(recipientId, out var recipientConnectionId))
+            // Use the resolved RecipientId from the response, not dto.RecipientId
+            var recipientId = message.RecipientId?.ToString();
+
+            if (recipientId != null && _onlineUsers.TryGetValue(recipientId, out var recipientConnectionId))
             {
                 await Clients.Client(recipientConnectionId)
                     .SendAsync("ReceiveDirectMessage", message);

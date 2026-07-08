@@ -21,39 +21,44 @@ namespace app.Repository
         }
 
         // ── Direct message ────────────────────────────────────────
-        public async Task<MessageResponseDto> SendDirectMessageAsync(SendDirectMessageDto dto, Guid senderId)
-        {
-            var recipient = await _context.Users.FindAsync(dto.RecipientId)
-                ?? throw new Exception("Recipient not found.");
+public async Task<MessageResponseDto> SendDirectMessageAsync(SendDirectMessageDto dto, Guid senderId)
+{
+    var recipient = await _context.Users
+        .FirstOrDefaultAsync(u => u.Username == dto.RecipientUsername)
+        ?? throw new Exception("Recipient not found.");
 
-            var message = new Message
-            {
-                Id = Guid.NewGuid(),
-                Content = dto.Content,
-                SentAt = DateTime.UtcNow,
-                SenderId = senderId,
-                RecipientId = dto.RecipientId,
-                GroupId = null,
-                IsRead = false
-            };
+    if (recipient.Id == senderId)
+        throw new Exception("You cannot send a message to yourself.");
 
-            _context.Messages.Add(message);
-            await _context.SaveChangesAsync();
+    var message = new Message
+    {
+        Id = Guid.NewGuid(),
+        Content = dto.Content,
+        SentAt = DateTime.UtcNow,
+        SenderId = senderId,
+        RecipientId = recipient.Id,
+        GroupId = null,
+        IsRead = false
+    };
 
-            var sender = await _context.Users.FindAsync(senderId);
+    _context.Messages.Add(message);
+    await _context.SaveChangesAsync();
 
-            return new MessageResponseDto
-            {
-                Id = message.Id,
-                Content = message.Content,
-                SentAt = message.SentAt,
-                IsRead = message.IsRead,
-                SenderId = message.SenderId,
-                SenderUsername = sender!.Username,
-                RecipientId = message.RecipientId,
-                GroupId = null
-            };
-        }
+    var sender = await _context.Users.FindAsync(senderId);
+
+    return new MessageResponseDto
+    {
+        Id = message.Id,
+        Content = message.Content,
+        SentAt = message.SentAt,
+        IsRead = message.IsRead,
+        SenderId = message.SenderId,
+        SenderUsername = sender!.Username,
+        RecipientId = message.RecipientId,
+        RecipientUsername = recipient.Username, // add this if MessageResponseDto has it — see note below
+        GroupId = null
+    };
+}
 
         public async Task<List<MessageResponseDto>> GetDirectMessagesAsync(Guid userId, Guid otherUserId, int page = 1)
         {

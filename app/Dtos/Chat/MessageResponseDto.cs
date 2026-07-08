@@ -14,6 +14,7 @@ namespace app.Dtos.Chat
         public Guid SenderId { get; set; }
         public string SenderUsername { get; set; } = string.Empty;
         public Guid? RecipientId { get; set; }
+        public string? RecipientUsername { get; set; }
         public Guid? GroupId { get; set; }
     }
 }
